@@ -5,9 +5,9 @@
 #FDT of a QL var
 
 #Upload the data dataset tips
-#dfTips=read.csv(url('https://raw.githubusercontent.com/mwaskom/seaborn-data/master/tips.csv'))
 
 dfTips=read.csv("tips.csv")
+View(dfTips)
 
 #FDT of a QL var
 names(dfTips)
@@ -16,7 +16,7 @@ View(dfTips)
 
 AbsFreq=table(dfTips$smoker)
 AbsFreq
-prop.table(AbsFreq)
+prop.table(AbsFreq)    #Abs. Freq
 RelFreq=round(prop.table(AbsFreq), 2)
 RelFreq
 
@@ -37,11 +37,12 @@ FDTQL=function(x){
   return(FDTx)
 }
 
+FDTQL(dfTips$smoker)
 
 FDTQL(dfTips$sex)
 FDTQL(dfTips$day)
 
-##Construction FDT of a Qunat variable 
+##Construction FDT of a Quant variable 
 #Loops and conditional functions work in R
 #1. Transform the variable into a categorical var based a definition/we specify them
 

@@ -50,7 +50,8 @@ FDTQL(dfTips$day)
 
 summary(dfTips$tip)
 head(dfTips)
-#define catgories: small whtn tip<3 meduim when tip is 3>= but less than 7, large otherwise
+#define catgories: small tip<3 [0,3) meduim when tip is 3>= [3,7) but less than 7, 
+#large otherwise when tip is 7 or more than 7 USD [7, 10]
 
 #selection + Loop
 catTips=c()  #create an empty vector
@@ -66,6 +67,8 @@ for (k in 1:length(dfTips$tip)) {
 }
 
 head(catTips)
+dfnew=cbind(dfTips, catTips)
+View(dfnew)
 head(dfTips$tip)
 #apply the function for FDT of QL
 FDTQL(catTips)

@@ -23,10 +23,11 @@ mymode <- function(v) {
 
 mymode(dfTips$tip)
 
+plot(density(dfTips$tip))
 
 #Other locations (quantiles)
 quantile(dfTips$tip)    #quartiles
-quantile(dfTips$tip, 0.8)
+quantile(dfTips$tip, 0.6)
 #write a fun that returns any location in the dist
 
 myQnt=function(x,q){
@@ -52,10 +53,11 @@ ecdf(dfTips$tip)(7)
 #quantile and ecdf are inverse of one another
 quantile(dfTips$tip, 0.8) #we have the percentage...look for the value
 
-ecdf(dfTips$tip)(6)    #we have the value ...look for the percentage
+ecdf(dfTips$tip)(5)    #we have the value ...look for the percentage
 
 # 80% paid 4 or less as tip, 20% paid more than 4 USD
 
+#Outliers
 
 boxplot(dfTips$tip,
         horizontal = T,
@@ -66,7 +68,7 @@ boxplot.stats(dfTips$tip)
 
 #remove the outliers
 
-tipNew=dfTips$tip[dfTips$tip<6]
+tipNew=dfTips$tip[dfTips$tip<5.8]
 
 boxplot(tipNew, horizontal = T)
 mean(tipNew)
@@ -79,7 +81,8 @@ plot(density(tipNew))
 range(dfTips$tip)
 sd(dfTips$tip)   
 var(dfTips$tip)   #center means the mean
-mad(dfTips$tip)
+mad(dfTips$tip)   #Abs. value instead of square root
+sd(tipNew)
 
 plot(density(dfTips$tip))
 

@@ -144,7 +144,6 @@ smk = pull(dfTips, smoker)
 
 head(smk)
 
-
 #sample_n works with rows
 dim(dfTips)
 sampledfTips=sample_n(dfTips, 100)

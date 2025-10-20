@@ -6,7 +6,7 @@ head(dtTips)
 dim(dtTips)
 #CASE of 2 QL Variables
 #Joint FDT
-#Gender and smoker associated?
+#Gender and smoker associated? What is our Question?
 
 jtSG=table(dtTips$sex, dtTips$smoker)
 jtSG

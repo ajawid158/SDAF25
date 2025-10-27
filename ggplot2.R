@@ -35,7 +35,7 @@ ggsave('jointBarGenderSmoke.pdf')
 g0=ggplot(dtTips, aes(x=tip, color=sex))
 g0+geom_density()+
   theme_replace()+
-  scale_color_manual(values = c('red', 'blue'))+
+  scale_color_manual(values = c('red', 'blue')) +
   xlim(-2,11)+
   theme(plot.title = element_text(face="bold",
                                   hjust = .5), 
@@ -56,7 +56,7 @@ library(ggridges)
 ggplot(dtTips, aes(x=tip, y=sex, fill=sex))+
   geom_density_ridges(color=7, 
                       lwd=.5)+
-  theme_gray()+
+  theme_gray()    +
   theme(plot.title = element_text(face = 'bold', 
                                   hjust = .5), 
         axis.title.x = element_text(),
